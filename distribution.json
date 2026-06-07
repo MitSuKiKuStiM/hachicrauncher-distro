@@ -12,7 +12,7 @@
             "name": "NeoForge鯖",
             "description": "NeoForge 21.1.233 / MC 1.21.1",
             "icon": "",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "address": "172.237.20.45:25565",
             "minecraftVersion": "1.21.1",
             "discord": {
@@ -511,6 +511,36 @@
                                 "size": 250861,
                                 "MD5": "fcc3e4df4990088c964f687b62f7c448",
                                 "url": "https://maven.neoforged.net/releases/com/machinezoo/noexception/noexception/1.7.1/noexception-1.7.1.jar"
+                            }
+                        },
+                        {
+                            "id": "net.neoforged:neoforge:21.1.233:universal",
+                            "name": "net.neoforged:neoforge:21.1.233:universal",
+                            "type": "Library",
+                            "artifact": {
+                                "size": 3542450,
+                                "MD5": "0d8b04926d967a337c05c75bf93f9c70",
+                                "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/lib/net/neoforged/neoforge/21.1.233/neoforge-21.1.233-universal.jar"
+                            }
+                        },
+                        {
+                            "id": "net.neoforged:neoforge:21.1.233:client",
+                            "name": "net.neoforged:neoforge:21.1.233:client",
+                            "type": "Library",
+                            "artifact": {
+                                "size": 5673828,
+                                "MD5": "7185cf63d9b340b2da2dc9672f04cd66",
+                                "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/lib/net/neoforged/neoforge/21.1.233/neoforge-21.1.233-client.jar"
+                            }
+                        },
+                        {
+                            "id": "net.minecraft:client:1.21.1-20240808.144430:extra",
+                            "name": "net.minecraft:client:1.21.1-20240808.144430:extra",
+                            "type": "Library",
+                            "artifact": {
+                                "size": 12372293,
+                                "MD5": "973b9700852b66bb7b74df75b0113db2",
+                                "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/lib/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-extra.jar"
                             }
                         }
                     ]
