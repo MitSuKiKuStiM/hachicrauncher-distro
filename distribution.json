@@ -12,7 +12,7 @@
             "name": "NeoForge鯖",
             "description": "NeoForge 21.1.233 / MC 1.21.1",
             "icon": "",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "address": "172.237.20.45:25565",
             "minecraftVersion": "1.21.1",
             "discord": {
@@ -733,6 +733,28 @@
                         "MD5": "e5018c782d851fea76be0205b7616e5d",
                         "path": "mods/sodium-neoforge-0.6.13+mc1.21.1.jar",
                         "url": "https://edge.forgecdn.net/files/6382/651/sodium-neoforge-0.6.13%2bmc1.21.1.jar"
+                    }
+                },
+                {
+                    "id": "mod:hosted:kubejs_neoforge_2101_7_2_build_368_jar",
+                    "name": "kubejs-neoforge-2101.7.2-build.368",
+                    "type": "File",
+                    "artifact": {
+                        "size": 2281720,
+                        "MD5": "c69cce67a668b2a13f1303c2dff8851b",
+                        "path": "mods/kubejs-neoforge-2101.7.2-build.368.jar",
+                        "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/mods/kubejs-neoforge-2101.7.2-build.368.jar"
+                    }
+                },
+                {
+                    "id": "mod:hosted:rhino_2101_2_7_build_81_jar",
+                    "name": "rhino-2101.2.7-build.81",
+                    "type": "File",
+                    "artifact": {
+                        "size": 882033,
+                        "MD5": "78fcea6d73ce33f8075fa33f02178b38",
+                        "path": "mods/rhino-2101.2.7-build.81.jar",
+                        "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/mods/rhino-2101.2.7-build.81.jar"
                     }
                 }
             ]
