@@ -13,7 +13,7 @@
             "description": "Arclight ハイブリッド (Fabricクライアントで接続)",
             "icon": "",
             "version": "1.0.0",
-            "address": "CHANGEME-neoforge.example.com:25566",
+            "address": "172.237.20.45:25565",
             "minecraftVersion": "1.21.1",
             "discord": {
                 "shortId": "NeoForge鯖",

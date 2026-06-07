@@ -19,7 +19,7 @@ const CONFIG = {
             id: 'hachi-neoforge-1.21.1',
             name: 'NeoForge鯖',
             description: 'Arclight ハイブリッド (Fabricクライアントで接続)',
-            address: 'CHANGEME-neoforge.example.com:25566', // ← 実アドレスに差し替え
+            address: '172.237.20.45:25565', // ← 実アドレスに差し替え
             mcVersion: '1.21.1',
             mainServer: true,
             // 元の NeoForge 13MOD の機能等価 Fabric セット
