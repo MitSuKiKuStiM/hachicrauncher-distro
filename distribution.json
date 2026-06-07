@@ -12,7 +12,7 @@
             "name": "NeoForge鯖",
             "description": "NeoForge 21.1.233 / MC 1.21.1",
             "icon": "",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "address": "172.237.20.45:25565",
             "minecraftVersion": "1.21.1",
             "discord": {
@@ -545,6 +545,17 @@
                                 "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/lib/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-extra.jar"
                             },
                             "classpath": false
+                        },
+                        {
+                            "id": "net.minecraft:client:1.21.1-20240808.144430:srg",
+                            "name": "net.minecraft:client:1.21.1-20240808.144430:srg",
+                            "type": "Library",
+                            "classpath": false,
+                            "artifact": {
+                                "size": 18725656,
+                                "MD5": "24d790d385dff0146020f1875b969e52",
+                                "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/lib/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-srg.jar"
+                            }
                         }
                     ]
                 },
