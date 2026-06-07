@@ -101,15 +101,21 @@ async function main(){
         artifact:{ size:uniBuf.length, MD5:md5(uniBuf), url:`https://maven.neoforged.net/releases/net/neoforged/neoforge/${NEO}/neoforge-${NEO}-universal.jar` },
         subModules:[ { id:vjId, name:'NeoForge Version Manifest', type:'VersionManifest', artifact:{ size:vjBuf.length, MD5:md5(vjBuf), url:`${CFG.PAGES}/versions/${vjId}/${vjId}.json` } }, ...libMods, ...gameMods ] }
 
-    // 6) MOD (Type.File, mods/)
+    // 6) MOD: instance の mods/ フォルダを正として走査（CFアプリ管理外の手動MODも拾う）
+    //    CFアプリ管理(installedAddons)に在れば CF/Modrinth URL 参照、無ければローカルjarを自前ホスト
     const inst2=JSON.parse(fs.readFileSync(CFG.INSTANCE,'utf8'))
+    const byFile={}; for(const a of (inst2.installedAddons||[])){ const f=a.installedFile||{}; if(f.fileName) byFile[f.fileName]={url:f.downloadUrl,dist:a.allowModDistribution,name:a.name} }
+    const modsDir=path.join(path.dirname(CFG.INSTANCE),'mods')
+    const jars=fs.existsSync(modsDir)?fs.readdirSync(modsDir).filter(x=>x.toLowerCase().endsWith('.jar')):[]
     const modMods=[]
-    for(const a of (inst2.installedAddons||[])){ const f=a.installedFile||{}; if(!f.fileName) continue
-        let url=f.downloadUrl, name=f.fileName
-        if(a.allowModDistribution===false || !url){ try{ const slug=SLUG[a.name]||String(f.fileName).toLowerCase().replace(/-(neoforge|fabric|forge|mc).*/,'').replace(/[^a-z0-9]+/g,'-')
+    for(const fname of jars){ const a=byFile[fname]||{}; let url=a.url, name=fname
+        if(a.dist===false){ try{ const slug=SLUG[a.name]||fname.toLowerCase().replace(/-(neoforge|fabric|forge|mc).*/,'').replace(/[^a-z0-9]+/g,'-')
             const vs=await getJson(`https://api.modrinth.com/v2/project/${slug}/version?loaders=["neoforge"]&game_versions=["${CFG.MC_VER}"]`)
-            const v=vs.find(x=>x.version_type==='release')||vs[0]; const file=v.files.find(x=>x.primary)||v.files[0]; url=file.url; name=url.split('/').pop() }catch(e){ console.log('SKIP mod',a.name,e.message); continue } }
-        const buf=await dl(url); modMods.push({ id:`mod:${a.addonID}:${f.id}`, name:a.name||name, type:'File', artifact:{ size:buf.length, MD5:md5(buf), path:`mods/${name}`, url } }); console.log('mod ok:',name) }
+            const v=vs.find(x=>x.version_type==='release')||vs[0]; const file=v.files.find(x=>x.primary)||v.files[0]; url=file.url; name=url.split('/').pop() }catch(e){ console.log('SKIP(modrinth)',fname,e.message); continue } }
+        let buf
+        if(url){ buf=await dl(url) }                                                       // CF/Modrinth 参照
+        else { buf=fs.readFileSync(path.join(modsDir,fname)); save(path.join('mods',fname),buf); url=`${CFG.PAGES}/mods/${fname}` }  // 手動MOD → 自前ホスト
+        modMods.push({ id:`mod:${fname.replace(/[^a-z0-9]/gi,'_')}`, name:a.name||name, type:'File', artifact:{ size:buf.length, MD5:md5(buf), path:`mods/${name}`, url } }); console.log('mod ok:',name) }
 
     // 7) distribution.json 差し替え
     const distPath=path.join(CFG.DISTRO_DIR,'distribution.json')
