@@ -12,7 +12,7 @@
             "name": "NeoForge鯖",
             "description": "NeoForge 21.1.233 / MC 1.21.1",
             "icon": "",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "address": "172.237.20.45:25565",
             "minecraftVersion": "1.21.1",
             "discord": {
@@ -560,69 +560,14 @@
                     ]
                 },
                 {
-                    "id": "mod:852662:5770623",
-                    "name": "Overflowing Bars",
+                    "id": "mod:949555:7338300",
+                    "name": "BadOptimizations",
                     "type": "File",
                     "artifact": {
-                        "size": 78482,
-                        "MD5": "7edba1f594d81f916b7ef263e608d2a5",
-                        "path": "mods/OverflowingBars-v21.1.1-1.21.1-NeoForge.jar",
-                        "url": "https://edge.forgecdn.net/files/5770/623/OverflowingBars-v21.1.1-1.21.1-NeoForge.jar"
-                    }
-                },
-                {
-                    "id": "mod:1367734:7122333",
-                    "name": "Health Bars",
-                    "type": "File",
-                    "artifact": {
-                        "size": 113200,
-                        "MD5": "5dcf573cb56e4a73170d6faade3a395e",
-                        "path": "mods/HealthBars-v21.1.0-1.21.1-NeoForge.jar",
-                        "url": "https://edge.forgecdn.net/files/7122/333/HealthBars-v21.1.0-1.21.1-NeoForge.jar"
-                    }
-                },
-                {
-                    "id": "mod:455508:6661598",
-                    "name": "Iris Shaders",
-                    "type": "File",
-                    "artifact": {
-                        "size": 2438548,
-                        "MD5": "6c1122aa7c2b1a4f24831e394c5b513f",
-                        "path": "mods/iris-neoforge-1.8.12+mc1.21.1.jar",
-                        "url": "https://edge.forgecdn.net/files/6661/598/iris-neoforge-1.8.12%2bmc1.21.1.jar"
-                    }
-                },
-                {
-                    "id": "mod:1214728:8207087",
-                    "name": "Easy NPC: Config UI",
-                    "type": "File",
-                    "artifact": {
-                        "size": 906537,
-                        "MD5": "9fa5506559e35228267da6bc0546d1bf",
-                        "path": "mods/easy_npc_config_ui-neoforge-1.21.1-6.17.0.jar",
-                        "url": "https://edge.forgecdn.net/files/8207/87/easy_npc_config_ui-neoforge-1.21.1-6.17.0.jar"
-                    }
-                },
-                {
-                    "id": "mod:686911:7537795",
-                    "name": "ImmediatelyFast",
-                    "type": "File",
-                    "artifact": {
-                        "size": 368598,
-                        "MD5": "567bb6d9155070ad858740af12450c63",
-                        "path": "mods/ImmediatelyFast-NeoForge-1.6.10+1.21.1.jar",
-                        "url": "https://edge.forgecdn.net/files/7537/795/ImmediatelyFast-NeoForge-1.6.10%2b1.21.1.jar"
-                    }
-                },
-                {
-                    "id": "mod:790626:8141551",
-                    "name": "ModernFix",
-                    "type": "File",
-                    "artifact": {
-                        "size": 587995,
-                        "MD5": "fee4cdc10341ae1162f81bdce784cdd7",
-                        "path": "mods/modernfix-neoforge-5.27.11+mc1.21.1.jar",
-                        "url": "https://edge.forgecdn.net/files/8141/551/modernfix-neoforge-5.27.11%2bmc1.21.1.jar"
+                        "size": 283566,
+                        "MD5": "59ee243a5ccd09fff1dd2879b3cad72a",
+                        "path": "mods/BadOptimizations-2.4.1-1.21.1.jar",
+                        "url": "https://edge.forgecdn.net/files/7338/300/BadOptimizations-2.4.1-1.21.1.jar"
                     }
                 },
                 {
@@ -637,14 +582,25 @@
                     }
                 },
                 {
-                    "id": "mod:949555:7338300",
-                    "name": "BadOptimizations",
+                    "id": "mod:1214728:8207087",
+                    "name": "Easy NPC: Config UI",
                     "type": "File",
                     "artifact": {
-                        "size": 283566,
-                        "MD5": "59ee243a5ccd09fff1dd2879b3cad72a",
-                        "path": "mods/BadOptimizations-2.4.1-1.21.1.jar",
-                        "url": "https://edge.forgecdn.net/files/7338/300/BadOptimizations-2.4.1-1.21.1.jar"
+                        "size": 906537,
+                        "MD5": "9fa5506559e35228267da6bc0546d1bf",
+                        "path": "mods/easy_npc_config_ui-neoforge-1.21.1-6.17.0.jar",
+                        "url": "https://edge.forgecdn.net/files/8207/87/easy_npc_config_ui-neoforge-1.21.1-6.17.0.jar"
+                    }
+                },
+                {
+                    "id": "mod:448233:8053771",
+                    "name": "Entity Culling Fabric/Forge",
+                    "type": "File",
+                    "artifact": {
+                        "size": 1582824,
+                        "MD5": "88831a176ed788b91d9c881a70a86902",
+                        "path": "mods/entityculling-neoforge-1.10.2-mc1.21.1.jar",
+                        "url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/2tOn8XA2/entityculling-neoforge-1.10.2-mc1.21.1.jar"
                     }
                 },
                 {
@@ -681,58 +637,36 @@
                     }
                 },
                 {
-                    "id": "mod:495476:8168234",
-                    "name": "Puzzles Lib",
+                    "id": "mod:1367734:7122333",
+                    "name": "Health Bars",
                     "type": "File",
                     "artifact": {
-                        "size": 1425185,
-                        "MD5": "df7794a4853550b30cc451e99cc9ad19",
-                        "path": "mods/PuzzlesLib-v21.1.51-1.21.1-NeoForge.jar",
-                        "url": "https://edge.forgecdn.net/files/8168/234/PuzzlesLib-v21.1.51-1.21.1-NeoForge.jar"
+                        "size": 113200,
+                        "MD5": "5dcf573cb56e4a73170d6faade3a395e",
+                        "path": "mods/HealthBars-v21.1.0-1.21.1-NeoForge.jar",
+                        "url": "https://edge.forgecdn.net/files/7122/333/HealthBars-v21.1.0-1.21.1-NeoForge.jar"
                     }
                 },
                 {
-                    "id": "mod:448233:8053771",
-                    "name": "Entity Culling Fabric/Forge",
+                    "id": "mod:686911:7537795",
+                    "name": "ImmediatelyFast",
                     "type": "File",
                     "artifact": {
-                        "size": 1582824,
-                        "MD5": "88831a176ed788b91d9c881a70a86902",
-                        "path": "mods/entityculling-neoforge-1.10.2-mc1.21.1.jar",
-                        "url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/2tOn8XA2/entityculling-neoforge-1.10.2-mc1.21.1.jar"
+                        "size": 368598,
+                        "MD5": "567bb6d9155070ad858740af12450c63",
+                        "path": "mods/ImmediatelyFast-NeoForge-1.6.10+1.21.1.jar",
+                        "url": "https://edge.forgecdn.net/files/7537/795/ImmediatelyFast-NeoForge-1.6.10%2b1.21.1.jar"
                     }
                 },
                 {
-                    "id": "mod:835091:8181011",
-                    "name": "Pufferfish's Skills [Fabric & Forge & NeoForge]",
+                    "id": "mod:455508:6661598",
+                    "name": "Iris Shaders",
                     "type": "File",
                     "artifact": {
-                        "size": 614216,
-                        "MD5": "52b1fbac1a87f50f54baea50ad483161",
-                        "path": "mods/puffish_skills-0.18.0-1.21-neoforge.jar",
-                        "url": "https://edge.forgecdn.net/files/8181/11/puffish_skills-0.18.0-1.21-neoforge.jar"
-                    }
-                },
-                {
-                    "id": "mod:283644:6926281",
-                    "name": "Placebo",
-                    "type": "File",
-                    "artifact": {
-                        "size": 324056,
-                        "MD5": "cc725fc5406d3af893484cfbba06f6ed",
-                        "path": "mods/Placebo-1.21.1-9.9.1.jar",
-                        "url": "https://edge.forgecdn.net/files/6926/281/Placebo-1.21.1-9.9.1.jar"
-                    }
-                },
-                {
-                    "id": "mod:394468:6382651",
-                    "name": "Sodium",
-                    "type": "File",
-                    "artifact": {
-                        "size": 1162994,
-                        "MD5": "e5018c782d851fea76be0205b7616e5d",
-                        "path": "mods/sodium-neoforge-0.6.13+mc1.21.1.jar",
-                        "url": "https://edge.forgecdn.net/files/6382/651/sodium-neoforge-0.6.13%2bmc1.21.1.jar"
+                        "size": 2438548,
+                        "MD5": "6c1122aa7c2b1a4f24831e394c5b513f",
+                        "path": "mods/iris-neoforge-1.8.12+mc1.21.1.jar",
+                        "url": "https://edge.forgecdn.net/files/6661/598/iris-neoforge-1.8.12%2bmc1.21.1.jar"
                     }
                 },
                 {
@@ -747,6 +681,61 @@
                     }
                 },
                 {
+                    "id": "mod:790626:8141551",
+                    "name": "ModernFix",
+                    "type": "File",
+                    "artifact": {
+                        "size": 587995,
+                        "MD5": "fee4cdc10341ae1162f81bdce784cdd7",
+                        "path": "mods/modernfix-neoforge-5.27.11+mc1.21.1.jar",
+                        "url": "https://edge.forgecdn.net/files/8141/551/modernfix-neoforge-5.27.11%2bmc1.21.1.jar"
+                    }
+                },
+                {
+                    "id": "mod:852662:5770623",
+                    "name": "Overflowing Bars",
+                    "type": "File",
+                    "artifact": {
+                        "size": 78482,
+                        "MD5": "7edba1f594d81f916b7ef263e608d2a5",
+                        "path": "mods/OverflowingBars-v21.1.1-1.21.1-NeoForge.jar",
+                        "url": "https://edge.forgecdn.net/files/5770/623/OverflowingBars-v21.1.1-1.21.1-NeoForge.jar"
+                    }
+                },
+                {
+                    "id": "mod:283644:6926281",
+                    "name": "Placebo",
+                    "type": "File",
+                    "artifact": {
+                        "size": 324056,
+                        "MD5": "cc725fc5406d3af893484cfbba06f6ed",
+                        "path": "mods/Placebo-1.21.1-9.9.1.jar",
+                        "url": "https://edge.forgecdn.net/files/6926/281/Placebo-1.21.1-9.9.1.jar"
+                    }
+                },
+                {
+                    "id": "mod:835091:8181011",
+                    "name": "Pufferfish's Skills [Fabric & Forge & NeoForge]",
+                    "type": "File",
+                    "artifact": {
+                        "size": 614216,
+                        "MD5": "52b1fbac1a87f50f54baea50ad483161",
+                        "path": "mods/puffish_skills-0.18.0-1.21-neoforge.jar",
+                        "url": "https://edge.forgecdn.net/files/8181/11/puffish_skills-0.18.0-1.21-neoforge.jar"
+                    }
+                },
+                {
+                    "id": "mod:495476:8168234",
+                    "name": "Puzzles Lib",
+                    "type": "File",
+                    "artifact": {
+                        "size": 1425185,
+                        "MD5": "df7794a4853550b30cc451e99cc9ad19",
+                        "path": "mods/PuzzlesLib-v21.1.51-1.21.1-NeoForge.jar",
+                        "url": "https://edge.forgecdn.net/files/8168/234/PuzzlesLib-v21.1.51-1.21.1-NeoForge.jar"
+                    }
+                },
+                {
                     "id": "mod:hosted:rhino_2101_2_7_build_81_jar",
                     "name": "rhino-2101.2.7-build.81",
                     "type": "File",
@@ -755,6 +744,28 @@
                         "MD5": "78fcea6d73ce33f8075fa33f02178b38",
                         "path": "mods/rhino-2101.2.7-build.81.jar",
                         "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/mods/rhino-2101.2.7-build.81.jar"
+                    }
+                },
+                {
+                    "id": "mod:394468:6382651",
+                    "name": "Sodium",
+                    "type": "File",
+                    "artifact": {
+                        "size": 1162994,
+                        "MD5": "e5018c782d851fea76be0205b7616e5d",
+                        "path": "mods/sodium-neoforge-0.6.13+mc1.21.1.jar",
+                        "url": "https://edge.forgecdn.net/files/6382/651/sodium-neoforge-0.6.13%2bmc1.21.1.jar"
+                    }
+                },
+                {
+                    "id": "mod:voicechat_neoforge_1_21_1_2_6_18_jar",
+                    "name": "voicechat-neoforge-1.21.1-2.6.18.jar",
+                    "type": "File",
+                    "artifact": {
+                        "size": 4902837,
+                        "MD5": "b8560ea2d8f5c05a0d947dff55085d82",
+                        "path": "mods/voicechat-neoforge-1.21.1-2.6.18.jar",
+                        "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/mods/voicechat-neoforge-1.21.1-2.6.18.jar"
                     }
                 }
             ]
