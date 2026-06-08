@@ -40,7 +40,7 @@
                             "artifact": {
                                 "size": 21148,
                                 "MD5": "6e1e83a1bebf1d9dc85c0b6edba8a681",
-                                "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/versions/neoforge-21.1.233/neoforge-21.1.233.json"
+                                "url": "https://hachimitsuki.github.io/hachicrauncher-distro/repo/versions/neoforge-21.1.233/neoforge-21.1.233.json"
                             }
                         },
                         {
@@ -520,7 +520,7 @@
                             "artifact": {
                                 "size": 3542450,
                                 "MD5": "0d8b04926d967a337c05c75bf93f9c70",
-                                "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/lib/net/neoforged/neoforge/21.1.233/neoforge-21.1.233-universal.jar"
+                                "url": "https://hachimitsuki.github.io/hachicrauncher-distro/repo/lib/net/neoforged/neoforge/21.1.233/neoforge-21.1.233-universal.jar"
                             },
                             "classpath": false
                         },
@@ -531,7 +531,7 @@
                             "artifact": {
                                 "size": 5673828,
                                 "MD5": "7185cf63d9b340b2da2dc9672f04cd66",
-                                "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/lib/net/neoforged/neoforge/21.1.233/neoforge-21.1.233-client.jar"
+                                "url": "https://hachimitsuki.github.io/hachicrauncher-distro/repo/lib/net/neoforged/neoforge/21.1.233/neoforge-21.1.233-client.jar"
                             },
                             "classpath": false
                         },
@@ -542,7 +542,7 @@
                             "artifact": {
                                 "size": 12372293,
                                 "MD5": "973b9700852b66bb7b74df75b0113db2",
-                                "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/lib/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-extra.jar"
+                                "url": "https://hachimitsuki.github.io/hachicrauncher-distro/repo/lib/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-extra.jar"
                             },
                             "classpath": false
                         },
@@ -554,7 +554,7 @@
                             "artifact": {
                                 "size": 18725656,
                                 "MD5": "24d790d385dff0146020f1875b969e52",
-                                "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/lib/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-srg.jar"
+                                "url": "https://hachimitsuki.github.io/hachicrauncher-distro/repo/lib/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-srg.jar"
                             }
                         }
                     ]
@@ -677,7 +677,7 @@
                         "size": 2281720,
                         "MD5": "c69cce67a668b2a13f1303c2dff8851b",
                         "path": "mods/kubejs-neoforge-2101.7.2-build.368.jar",
-                        "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/mods/kubejs-neoforge-2101.7.2-build.368.jar"
+                        "url": "https://hachimitsuki.github.io/hachicrauncher-distro/repo/mods/kubejs-neoforge-2101.7.2-build.368.jar"
                     }
                 },
                 {
@@ -743,7 +743,7 @@
                         "size": 882033,
                         "MD5": "78fcea6d73ce33f8075fa33f02178b38",
                         "path": "mods/rhino-2101.2.7-build.81.jar",
-                        "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/mods/rhino-2101.2.7-build.81.jar"
+                        "url": "https://hachimitsuki.github.io/hachicrauncher-distro/repo/mods/rhino-2101.2.7-build.81.jar"
                     }
                 },
                 {
@@ -765,7 +765,7 @@
                         "size": 4902837,
                         "MD5": "b8560ea2d8f5c05a0d947dff55085d82",
                         "path": "mods/voicechat-neoforge-1.21.1-2.6.18.jar",
-                        "url": "https://mitsukikustim.github.io/hachicrauncher-distro/repo/mods/voicechat-neoforge-1.21.1-2.6.18.jar"
+                        "url": "https://hachimitsuki.github.io/hachicrauncher-distro/repo/mods/voicechat-neoforge-1.21.1-2.6.18.jar"
                     }
                 }
             ]

@@ -9,10 +9,10 @@ const path = require('path')
 const crypto = require('crypto')
 
 const CONFIG = {
-    // GitHub Pages 配信ベース（MitSuKiKuStiM/hachicrauncher-distro）
-    baseFileUrl: 'https://mitsukikustim.github.io/hachicrauncher-distro/repo',
+    // GitHub Pages 配信ベース（HachiMitsuki/hachicrauncher-distro）
+    baseFileUrl: 'https://hachimitsuki.github.io/hachicrauncher-distro/repo',
     outputDir: path.join(__dirname, 'repo'),
-    userAgent: 'HachiCrauncher/1.0.0 (github.com/MitSuKiKuStiM/HachiCrauncher)',
+    userAgent: 'HachiCrauncher/1.0.0 (github.com/HachiMitsuki/HachiCrauncher)',
     discord: { clientId: '', smallImageText: 'HachiCrauncher', smallImageKey: 'hachi-icon' },
     servers: [
         {

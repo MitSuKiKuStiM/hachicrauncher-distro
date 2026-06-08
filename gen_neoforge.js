@@ -26,7 +26,7 @@ const CFG = {
     SERVER_ID: 'hachi-neoforge-1.21.1',
     SERVER_NAME: 'NeoForge鯖',
     SERVER_ADDR: '172.237.20.45:25565',
-    PAGES: 'https://mitsukikustim.github.io/hachicrauncher-distro/repo',
+    PAGES: 'https://hachimitsuki.github.io/hachicrauncher-distro/repo',
     DISTRO_DIR: 'D:/Repos/hachicrauncher-distro',
     INSTANCE: 'C:/Users/mitsu/curseforge/minecraft/Instances/test server/minecraftinstance.json',
     WORK: 'D:/claude/neoforge_work',
