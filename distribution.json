@@ -12,7 +12,7 @@
             "name": "NeoForge鯖",
             "description": "NeoForge 21.1.233 / MC 1.21.1",
             "icon": "",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "address": "172.237.20.45:25565",
             "minecraftVersion": "1.21.1",
             "discord": {
@@ -1037,10 +1037,10 @@
                     "name": "JP_Mods_Translation.zip",
                     "type": "File",
                     "artifact": {
-                        "size": 27549,
-                        "MD5": "344142192710f2d3dcb1edd6ed0c694b",
+                        "size": 195382,
+                        "MD5": "f4cd049e4dc85c98397965cc8ddeb263",
                         "path": "resourcepacks/JP_Mods_Translation.zip",
-                        "url": "https://github.com/HachiMitsuki/hachicrauncher-distro/releases/download/mods-host/JP_Mods_Translation.zip"
+                        "url": "https://github.com/HachiMitsuki/hachicrauncher-distro/releases/download/mods-host/JP_Mods_Translation-f4cd049e.zip"
                     }
                 },
                 {

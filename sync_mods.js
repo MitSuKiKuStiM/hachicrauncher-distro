@@ -62,17 +62,21 @@ async function main(){
     let removed = 0
     for(const k of Object.keys(existing)) if(!jars.includes(k)){ console.log('- ' + k); removed++ }
 
-    // ---- リソースパック (resourcepacks/*.zip → Release asset) ----
+    // ---- リソースパック (resourcepacks/*.zip → Release asset, 内容ハッシュで差分検知) ----
+    // リソパは同名のまま中身だけ更新されることが多いので、ファイル名でなく MD5 で比較する
     const rpDir = path.join(INST, 'resourcepacks')
     const rpFiles = fs.existsSync(rpDir) ? fs.readdirSync(rpDir).filter(x => x.toLowerCase().endsWith('.zip')) : []
     const existingRP = {}; for(const m of allFile) if(isRP(m)) existingRP[m.artifact.path.replace('resourcepacks/','')] = m
-    const rpMods = []; let rpAdded = 0, rpRemoved = 0
+    const rpMods = []; let rpAdded = 0, rpChanged = 0, rpRemoved = 0
     for(const fn of rpFiles){
-        if(existingRP[fn]){ rpMods.push(existingRP[fn]); continue }
         const buf = fs.readFileSync(path.join(rpDir, fn))
-        const url = await uploadAsset(fn, buf)
-        rpMods.push({ id:`rp:${fn.replace(/[^a-z0-9]/gi,'_')}`, name:fn, type:'File', artifact:{ size:buf.length, MD5:md5(buf), path:`resourcepacks/${fn}`, url } })
-        console.log('+RP ' + fn); rpAdded++
+        const hash = md5(buf)
+        const cur = existingRP[fn]
+        if(cur && cur.artifact.MD5 === hash){ rpMods.push(cur); continue }   // 同一 → そのまま
+        const dot = fn.lastIndexOf('.'), base = dot < 0 ? fn : fn.slice(0, dot), ext = dot < 0 ? '' : fn.slice(dot)
+        const url = await uploadAsset(`${base}-${hash.slice(0,8)}${ext}`, buf)   // 内容ハッシュ付き名でURLを更新
+        rpMods.push({ id:`rp:${fn.replace(/[^a-z0-9]/gi,'_')}`, name:fn, type:'File', artifact:{ size:buf.length, MD5:hash, path:`resourcepacks/${fn}`, url } })
+        if(cur){ console.log('~RP 更新 ' + fn); rpChanged++ } else { console.log('+RP ' + fn); rpAdded++ }
     }
     for(const k of Object.keys(existingRP)) if(!rpFiles.includes(k)){ console.log('-RP ' + k); rpRemoved++ }
 
@@ -91,15 +95,15 @@ async function main(){
         }
     }
 
-    if(added+removed+rpAdded+rpRemoved+(optChanged?1:0) === 0){ console.log('変更なし。'); return }
+    if(added+removed+rpAdded+rpChanged+rpRemoved+(optChanged?1:0) === 0){ console.log('変更なし。'); return }
 
     srv.modules = [...nonFile, ...fileMods, ...rpMods, ...(sharedModule ? [sharedModule] : [])]
     const p = (srv.version||'2.0.0').split('.'); p[2] = String(Number(p[2]||0)+1); srv.version = p.join('.')
     fs.writeFileSync(distPath, JSON.stringify(dist,null,4))
-    console.log(`MOD ${fileMods.length}(+${added} -${removed}) | RP ${rpMods.length}(+${rpAdded} -${rpRemoved}) | options ${optChanged?'更新':'据置'} | v${srv.version}`)
+    console.log(`MOD ${fileMods.length}(+${added} -${removed}) | RP ${rpMods.length}(+${rpAdded} ~${rpChanged} -${rpRemoved}) | options ${optChanged?'更新':'据置'} | v${srv.version}`)
 
     cp.execSync('git add -A', { cwd: DISTRO })
-    cp.execSync(`git commit -m "sync m+${added}/-${removed} rp+${rpAdded}/-${rpRemoved} opt:${optChanged} v${srv.version}"`, { cwd: DISTRO, stdio: 'inherit' })
+    cp.execSync(`git commit -m "sync m+${added}/-${removed} rp+${rpAdded}/~${rpChanged}/-${rpRemoved} opt:${optChanged} v${srv.version}"`, { cwd: DISTRO, stdio: 'inherit' })
     cp.execSync('git push origin main', { cwd: DISTRO, stdio: 'inherit' })
     console.log('✅ pushed. プレイヤーは HachiCrauncher 再起動で同期される。')
 }
