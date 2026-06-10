@@ -9,6 +9,7 @@
 // 振り分け: CurseForge アプリ管理のMOD = 公式CDN(またはModrinth)参照 / 手動追加MOD = 自前ホスト(repo/mods/)
 // NeoForge ローダ(ForgeHosted)や lib は触らない。MOD(Type.File)だけ同期する。
 const fs = require('fs'), path = require('path'), crypto = require('crypto'), cp = require('child_process')
+const { uploadAsset } = require('./gh_assets')   // 手動MODは GitHub Release assets にホスト
 const md5 = b => crypto.createHash('md5').update(b).digest('hex')
 const UA = 'HachiCrauncher'
 const INST = 'C:/Users/mitsu/curseforge/minecraft/Instances/test server'
@@ -50,7 +51,7 @@ async function main(){
         }
         let buf
         if(url){ buf = await dl(url) }                              // CF/Modrinth 参照
-        else { buf = fs.readFileSync(path.join(modsDir,fn)); fs.mkdirSync(path.join(REPO,'mods'),{recursive:true}); fs.writeFileSync(path.join(REPO,'mods',fn),buf); url = `${PAGES}/mods/${fn}` }  // 手動MOD → 自前ホスト
+        else { buf = fs.readFileSync(path.join(modsDir,fn)); url = await uploadAsset(fn, buf); console.log('  ↳ Release asset へアップロード（git非コミット）') }  // 手動MOD → GitHub Release assets
         fileMods.push({ id:`mod:${fn.replace(/[^a-z0-9]/gi,'_')}`, name:a.name||name, type:'File', artifact:{ size:buf.length, MD5:md5(buf), path:`mods/${name}`, url } })
         console.log('+ ' + name); added++
     }
