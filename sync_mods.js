@@ -35,8 +35,12 @@ async function main(){
     const srv = dist.servers.find(s=>s.id===SID)
     if(!srv){ console.error('server not found:', SID); process.exit(1) }
     const nonFile = srv.modules.filter(m=>m.type!=='File')         // ForgeHosted(loader)等は温存
-    const existing = {}; for(const m of srv.modules.filter(m=>m.type==='File')) existing[(m.artifact.path||'').replace('mods/','')] = m
+    const allFile = srv.modules.filter(m=>m.type==='File')
+    const isRP  = m => (m.artifact.path||'').startsWith('resourcepacks/')
+    const isOpt = m => (m.artifact.path||'') === 'hachicrauncher-shared-options.txt'
+    const existing = {}; for(const m of allFile) if(!isRP(m) && !isOpt(m)) existing[(m.artifact.path||'').replace('mods/','')] = m
 
+    // ---- MOD ----
     const fileMods = []; let added = 0
     for(const fn of jars){
         if(existing[fn]){ fileMods.push(existing[fn]); continue }   // 既に配信中 → そのまま
@@ -57,15 +61,45 @@ async function main(){
     }
     let removed = 0
     for(const k of Object.keys(existing)) if(!jars.includes(k)){ console.log('- ' + k); removed++ }
-    if(added===0 && removed===0){ console.log('変更なし。'); return }
 
-    srv.modules = [...nonFile, ...fileMods]
+    // ---- リソースパック (resourcepacks/*.zip → Release asset) ----
+    const rpDir = path.join(INST, 'resourcepacks')
+    const rpFiles = fs.existsSync(rpDir) ? fs.readdirSync(rpDir).filter(x => x.toLowerCase().endsWith('.zip')) : []
+    const existingRP = {}; for(const m of allFile) if(isRP(m)) existingRP[m.artifact.path.replace('resourcepacks/','')] = m
+    const rpMods = []; let rpAdded = 0, rpRemoved = 0
+    for(const fn of rpFiles){
+        if(existingRP[fn]){ rpMods.push(existingRP[fn]); continue }
+        const buf = fs.readFileSync(path.join(rpDir, fn))
+        const url = await uploadAsset(fn, buf)
+        rpMods.push({ id:`rp:${fn.replace(/[^a-z0-9]/gi,'_')}`, name:fn, type:'File', artifact:{ size:buf.length, MD5:md5(buf), path:`resourcepacks/${fn}`, url } })
+        console.log('+RP ' + fn); rpAdded++
+    }
+    for(const k of Object.keys(existingRP)) if(!rpFiles.includes(k)){ console.log('-RP ' + k); rpRemoved++ }
+
+    // ---- 共有 options (リソパ有効化行 + キーバインド) → Release asset ----
+    let sharedModule = srv.modules.find(m => m.type==='File' && isOpt(m)) || null
+    let optChanged = false
+    const optTxt = path.join(INST, 'options.txt')
+    if(fs.existsSync(optTxt)){
+        const keep = fs.readFileSync(optTxt,'utf8').split(/\r?\n/).filter(l => /^(resourcePacks:|incompatibleResourcePacks:|key_)/.test(l))
+        const buf = Buffer.from(keep.join('\n') + '\n', 'utf8')
+        const hash = md5(buf)
+        if(!sharedModule || sharedModule.artifact.MD5 !== hash){
+            const url = await uploadAsset(`shared-options-${hash.slice(0,8)}.txt`, buf)   // 内容ハッシュ付き名でURLを更新
+            sharedModule = { id:'shared-options', name:'Shared options (resourcepacks + keybinds)', type:'File', artifact:{ size:buf.length, MD5:hash, path:'hachicrauncher-shared-options.txt', url } }
+            console.log(`~OPTIONS 更新 (${keep.length} 行: リソパ有効化 + キーバインド)`); optChanged = true
+        }
+    }
+
+    if(added+removed+rpAdded+rpRemoved+(optChanged?1:0) === 0){ console.log('変更なし。'); return }
+
+    srv.modules = [...nonFile, ...fileMods, ...rpMods, ...(sharedModule ? [sharedModule] : [])]
     const p = (srv.version||'2.0.0').split('.'); p[2] = String(Number(p[2]||0)+1); srv.version = p.join('.')
     fs.writeFileSync(distPath, JSON.stringify(dist,null,4))
-    console.log(`File mods ${fileMods.length} | +${added} -${removed} | v${srv.version}`)
+    console.log(`MOD ${fileMods.length}(+${added} -${removed}) | RP ${rpMods.length}(+${rpAdded} -${rpRemoved}) | options ${optChanged?'更新':'据置'} | v${srv.version}`)
 
     cp.execSync('git add -A', { cwd: DISTRO })
-    cp.execSync(`git commit -m "sync mods (+${added} -${removed}) v${srv.version}"`, { cwd: DISTRO, stdio: 'inherit' })
+    cp.execSync(`git commit -m "sync m+${added}/-${removed} rp+${rpAdded}/-${rpRemoved} opt:${optChanged} v${srv.version}"`, { cwd: DISTRO, stdio: 'inherit' })
     cp.execSync('git push origin main', { cwd: DISTRO, stdio: 'inherit' })
     console.log('✅ pushed. プレイヤーは HachiCrauncher 再起動で同期される。')
 }

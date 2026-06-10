@@ -12,7 +12,7 @@
             "name": "NeoForge鯖",
             "description": "NeoForge 21.1.233 / MC 1.21.1",
             "icon": "",
-            "version": "2.0.7",
+            "version": "2.0.8",
             "address": "172.237.20.45:25565",
             "minecraftVersion": "1.21.1",
             "discord": {
@@ -1030,6 +1030,39 @@
                         "MD5": "91ab689aec35d6929682c147be2d57ed",
                         "path": "mods/YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar",
                         "url": "https://edge.forgecdn.net/files/5954/804/YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar"
+                    }
+                },
+                {
+                    "id": "rp:JP_Mods_Translation_zip",
+                    "name": "JP_Mods_Translation.zip",
+                    "type": "File",
+                    "artifact": {
+                        "size": 27549,
+                        "MD5": "344142192710f2d3dcb1edd6ed0c694b",
+                        "path": "resourcepacks/JP_Mods_Translation.zip",
+                        "url": "https://github.com/HachiMitsuki/hachicrauncher-distro/releases/download/mods-host/JP_Mods_Translation.zip"
+                    }
+                },
+                {
+                    "id": "rp:Sodium_Japanese_0_8_7_zip",
+                    "name": "Sodium_Japanese_0.8.7.zip",
+                    "type": "File",
+                    "artifact": {
+                        "size": 34408,
+                        "MD5": "6cfe29a80e11b88f8983b6c9f2902445",
+                        "path": "resourcepacks/Sodium_Japanese_0.8.7.zip",
+                        "url": "https://github.com/HachiMitsuki/hachicrauncher-distro/releases/download/mods-host/Sodium_Japanese_0.8.7.zip"
+                    }
+                },
+                {
+                    "id": "shared-options",
+                    "name": "Shared options (resourcepacks + keybinds)",
+                    "type": "File",
+                    "artifact": {
+                        "size": 5634,
+                        "MD5": "a049bc6be103b4ebb471020b8507f68a",
+                        "path": "hachicrauncher-shared-options.txt",
+                        "url": "https://github.com/HachiMitsuki/hachicrauncher-distro/releases/download/mods-host/shared-options-a049bc6b.txt"
                     }
                 }
             ]
