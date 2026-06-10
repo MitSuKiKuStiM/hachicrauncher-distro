@@ -12,7 +12,7 @@
             "name": "NeoForge鯖",
             "description": "NeoForge 21.1.233 / MC 1.21.1",
             "icon": "",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "address": "172.237.20.45:25565",
             "minecraftVersion": "1.21.1",
             "discord": {
@@ -560,6 +560,17 @@
                     ]
                 },
                 {
+                    "id": "mod:azurelibarmor_neo_1_21_1_3_1_3_jar",
+                    "name": "AzureLib Armor",
+                    "type": "File",
+                    "artifact": {
+                        "size": 574146,
+                        "MD5": "cb6419355f109bc6ed93dcc5f58d036d",
+                        "path": "mods/azurelibarmor-neo-1.21.1-3.1.3.jar",
+                        "url": "https://edge.forgecdn.net/files/7797/728/azurelibarmor-neo-1.21.1-3.1.3.jar"
+                    }
+                },
+                {
                     "id": "mod:949555:7338300",
                     "name": "BadOptimizations",
                     "type": "File",
@@ -568,6 +579,28 @@
                         "MD5": "59ee243a5ccd09fff1dd2879b3cad72a",
                         "path": "mods/BadOptimizations-2.4.1-1.21.1.jar",
                         "url": "https://edge.forgecdn.net/files/7338/300/BadOptimizations-2.4.1-1.21.1.jar"
+                    }
+                },
+                {
+                    "id": "mod:cloth_config_15_0_140_neoforge_jar",
+                    "name": "Cloth Config API (Fabric/Forge/NeoForge)",
+                    "type": "File",
+                    "artifact": {
+                        "size": 1163890,
+                        "MD5": "4c3757160403fcccb8ad468c2ea22862",
+                        "path": "mods/cloth-config-15.0.140-neoforge.jar",
+                        "url": "https://edge.forgecdn.net/files/5729/127/cloth-config-15.0.140-neoforge.jar"
+                    }
+                },
+                {
+                    "id": "mod:DungeonsArise_1_21_1_2_1_68_release_jar",
+                    "name": "When Dungeons Arise - Forge!",
+                    "type": "File",
+                    "artifact": {
+                        "size": 11842679,
+                        "MD5": "8c803078cb52411a40201d6e69a23529",
+                        "path": "mods/DungeonsArise-1.21.1-2.1.68-release.jar",
+                        "url": "https://edge.forgecdn.net/files/7150/870/DungeonsArise-1.21.1-2.1.68-release.jar"
                     }
                 },
                 {
@@ -601,6 +634,17 @@
                         "MD5": "88831a176ed788b91d9c881a70a86902",
                         "path": "mods/entityculling-neoforge-1.10.2-mc1.21.1.jar",
                         "url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/2tOn8XA2/entityculling-neoforge-1.10.2-mc1.21.1.jar"
+                    }
+                },
+                {
+                    "id": "mod:epic_fight_21_17_3_1_mc1_21_1_neoforge_jar",
+                    "name": "Epic Fight",
+                    "type": "File",
+                    "artifact": {
+                        "size": 8578288,
+                        "MD5": "b4d1d7e4c195fca39ce3a83690cdb147",
+                        "path": "mods/epic-fight-21.17.3.1-mc1.21.1-neoforge.jar",
+                        "url": "https://edge.forgecdn.net/files/8175/609/epic-fight-21.17.3.1-mc1.21.1-neoforge.jar"
                     }
                 },
                 {
@@ -714,6 +758,39 @@
                     }
                 },
                 {
+                    "id": "mod:player_animation_lib_forge_2_0_4_1_21_1_jar",
+                    "name": "playerAnimator",
+                    "type": "File",
+                    "artifact": {
+                        "size": 203149,
+                        "MD5": "ecb81c9479605db12a77bea774b88406",
+                        "path": "mods/player-animation-lib-forge-2.0.4+1.21.1.jar",
+                        "url": "https://edge.forgecdn.net/files/7389/814/player-animation-lib-forge-2.0.4%2b1.21.1.jar"
+                    }
+                },
+                {
+                    "id": "mod:pufferfish_unofficial_additions_1_21_1_2_2_8_jar",
+                    "name": "Pufferfish's Unofficial Additions",
+                    "type": "File",
+                    "artifact": {
+                        "size": 52976,
+                        "MD5": "853c0e629c6f2b82dcaaae5a6facd8f4",
+                        "path": "mods/pufferfish_unofficial_additions-1.21.1-2.2.8.jar",
+                        "url": "https://edge.forgecdn.net/files/7389/968/pufferfish_unofficial_additions-1.21.1-2.2.8.jar"
+                    }
+                },
+                {
+                    "id": "mod:puffish_attributes_0_8_2_1_21_neoforge_jar",
+                    "name": "Pufferfish's Attributes [Fabric & Forge & NeoForge]",
+                    "type": "File",
+                    "artifact": {
+                        "size": 235521,
+                        "MD5": "754d40752af27e5ea2f999c2da7a621e",
+                        "path": "mods/puffish_attributes-0.8.2-1.21-neoforge.jar",
+                        "url": "https://edge.forgecdn.net/files/7551/339/puffish_attributes-0.8.2-1.21-neoforge.jar"
+                    }
+                },
+                {
                     "id": "mod:835091:8181011",
                     "name": "Pufferfish's Skills [Fabric & Forge & NeoForge]",
                     "type": "File",
@@ -747,6 +824,28 @@
                     }
                 },
                 {
+                    "id": "mod:RPG_HUD_3_10_3_neoforge_1_21_1_jar",
+                    "name": "RPG-HUD-3.10.3-neoforge-1.21.1.jar",
+                    "type": "File",
+                    "artifact": {
+                        "size": 220375,
+                        "MD5": "863c2e0b9ffe1098c44e4b86611b2e5b",
+                        "path": "mods/RPG-HUD-3.10.3-neoforge-1.21.1.jar",
+                        "url": "https://hachimitsuki.github.io/hachicrauncher-distro/repo/mods/RPG-HUD-3.10.3-neoforge-1.21.1.jar"
+                    }
+                },
+                {
+                    "id": "mod:rpg_skill_tree_1_3_0_jar",
+                    "name": "rpg-skill-tree-1.3.0.jar",
+                    "type": "File",
+                    "artifact": {
+                        "size": 389814,
+                        "MD5": "3271668e31255cc76b7b0b6f7edab6f6",
+                        "path": "mods/rpg-skill-tree-1.3.0.jar",
+                        "url": "https://hachimitsuki.github.io/hachicrauncher-distro/repo/mods/rpg-skill-tree-1.3.0.jar"
+                    }
+                },
+                {
                     "id": "mod:394468:6382651",
                     "name": "Sodium",
                     "type": "File",
@@ -766,6 +865,28 @@
                         "MD5": "b8560ea2d8f5c05a0d947dff55085d82",
                         "path": "mods/voicechat-neoforge-1.21.1-2.6.18.jar",
                         "url": "https://hachimitsuki.github.io/hachicrauncher-distro/repo/mods/voicechat-neoforge-1.21.1-2.6.18.jar"
+                    }
+                },
+                {
+                    "id": "mod:YungsApi_1_21_1_NeoForge_5_1_6_jar",
+                    "name": "YUNG's API (NeoForge)",
+                    "type": "File",
+                    "artifact": {
+                        "size": 388678,
+                        "MD5": "4a27558e0a2fd72512b051525c9abeaf",
+                        "path": "mods/YungsApi-1.21.1-NeoForge-5.1.6.jar",
+                        "url": "https://edge.forgecdn.net/files/6715/463/YungsApi-1.21.1-NeoForge-5.1.6.jar"
+                    }
+                },
+                {
+                    "id": "mod:YungsBetterDungeons_1_21_1_NeoForge_5_1_4_jar",
+                    "name": "YUNG's Better Dungeons (NeoForge)",
+                    "type": "File",
+                    "artifact": {
+                        "size": 782160,
+                        "MD5": "91ab689aec35d6929682c147be2d57ed",
+                        "path": "mods/YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar",
+                        "url": "https://edge.forgecdn.net/files/5954/804/YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar"
                     }
                 }
             ]
